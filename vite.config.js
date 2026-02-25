@@ -1,3 +1,4 @@
+import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import { ViteEjsPlugin } from "vite-plugin-ejs";
 import { fileURLToPath } from "node:url";
@@ -22,18 +23,19 @@ function moveOutputPlugin() {
   };
 }
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   // base 的寫法:
-  // base: '/Repository 的名稱/'
-  base: "/TenTenPanda/",
+  // base: '/Repository 的名稱/' -> 只在 build 時使用這個 base，dev 時還是用 '/'
+  base: command === "build" ? "/TenTenPanda/" : "/",
   plugins: [
+    react(), // ← 只加這行
     liveReload(["./layout/**/*.ejs", "./pages/**/*.ejs", "./pages/**/*.html"]),
     ViteEjsPlugin(),
     moveOutputPlugin(),
   ],
   server: {
     // 啟動 server 時預設開啟的頁面
-    open: "pages/index.html",
+    open: "/pages/index.html",
   },
   build: {
     rollupOptions: {
@@ -43,12 +45,12 @@ export default defineConfig({
           .map((file) => [
             path.relative(
               "pages",
-              file.slice(0, file.length - path.extname(file).length)
+              file.slice(0, file.length - path.extname(file).length),
             ),
             fileURLToPath(new URL(file, import.meta.url)),
-          ])
+          ]),
       ),
     },
     outDir: "dist",
   },
-});
+}));
