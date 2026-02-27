@@ -10,7 +10,7 @@ const Return = () => {
                 <ol className="breadcrumb">
                   <li className="bread-item">
                     <a href="./index.html">
-                      <img src="/icon-home.svg" alt="" />
+                      <img src="/icon-home.webp" alt="" />
                     </a>
                   </li>
                   <li className="d-flex align-items-center">

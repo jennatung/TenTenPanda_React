@@ -33,7 +33,7 @@
   ::before {
     content: "";
     position: absolute;
-    content: url("@/assets/images/corner-l.png");
+    content: url("@/assets/images/corner-l.webp");
     width: 40px;
     height: 40px;
     bottom: 1px;
@@ -50,7 +50,7 @@
   ::after {
     content: "";
     position: absolute;
-    content: url("@/assets/images/corner-l.png");
+    content: url("@/assets/images/corner-l.webp");
     width: 40px;
     height: 40px;
     top: 0;
@@ -95,7 +95,7 @@
   ::before {
     content: "";
     position: absolute;
-    content: url("@/assets/images/corner-s.png");
+    content: url("@/assets/images/corner-s.webp");
     top: 5px;
     left: -1px;
     transform: translateY(-100%) rotateY(180deg);
@@ -106,7 +106,7 @@
   ::after {
     content: "";
     position: absolute;
-    content: url("@/assets/images/corner-s.png");
+    content: url("@/assets/images/corner-s.webp");
     right: 1px;
     bottom: -3px;
     transform: translateX(100%) rotateY(180deg);
@@ -114,7 +114,7 @@
       all: unset;
       content: "";
       position: absolute;
-      content: url("@/assets/images/corner-s.png");
+      content: url("@/assets/images/corner-s.webp");
       top: 7px;
       right: 0;
       transform: translateY(-100%);
@@ -171,7 +171,7 @@
     border-radius: 56px;
   }
   &-1 {
-    background-image: url(@/assets/images/ad1.jpg);
+    background-image: url(@/assets/images/ad1.webp);
     background-size: cover;
     background-position: center;
     padding: 24px;
@@ -188,7 +188,7 @@
     }
   }
   &-2 {
-    background-image: url(@/assets/images/ad2.jpg);
+    background-image: url(@/assets/images/ad2.webp);
     background-size: 200%;
     background-position: 30% 50%;
     @include media-breakpoint-up(lg) {
@@ -203,7 +203,7 @@
     }
   }
   &-3 {
-    background-image: url(@/assets/images/ad3.png);
+    background-image: url(@/assets/images/ad3.webp);
     background-size: cover;
     background-position: center;
   }
@@ -301,7 +301,7 @@
 
 // <------------ section 4 Slogan start ------------> //
 .slogan-section {
-  background-image: url(@/assets/images/bg-slogan-mb.png);
+  background-image: url(@/assets/images/bg-slogan-mb.webp);
   width: auto;
   height: 375px;
   background-size: cover;
@@ -435,7 +435,7 @@
 
 // <------------ section 6 甜甜在這裡-map Start ------------> //
 .map {
-  background-image: url(@/assets/images/s6-bg.png);
+  background-image: url(@/assets/images/s6-bg.webp);
   .s6-bg {
     background-color: $white;
     .store {

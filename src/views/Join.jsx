@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import login1 from "@/assets/images/login-1.jpg";
-import login7 from "@/assets/images/login-7.png";
-import banner from "@/assets/images/banner.jpg";
+import login1 from "@/assets/images/login-1.webp";
+import login7 from "@/assets/images/login-7.webp";
+import banner from "@/assets/images/banner.webp";
 
 const Join = () => {
   return (

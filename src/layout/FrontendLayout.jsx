@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
-import logo from "@/assets/images/logo.jpg";
-import cornerS from "@/assets/images/corner-s.png";
+import logo from "@/assets/images/logo.webp";
+import cornerS from "@/assets/images/corner-s.webp";
 
 function FrontendLayout() {
   return (

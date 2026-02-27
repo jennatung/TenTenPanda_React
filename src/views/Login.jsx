@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import login3 from "@/assets/images/login-3.png";
-import login4 from "@/assets/images/login-4.png";
-import login2 from "@/assets/images/login-2.jpg";
+import login3 from "@/assets/images/login-3.webp";
+import login4 from "@/assets/images/login-4.webp";
+import login2 from "@/assets/images/login-2.webp";
 
 const Login = () => {
   return (

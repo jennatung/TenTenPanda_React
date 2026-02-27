@@ -1,15 +1,15 @@
-import curveLine from "@/assets/images/curve-line.svg";
-import login4 from "@/assets/images/login-4.png";
-import graphic3 from "@/assets/images/graphic-3.svg";
-import graphic4 from "@/assets/images/graphic-4.svg";
-import graphic5 from "@/assets/images/graphic-5.svg";
-import login1 from "@/assets/images/login-1.jpg";
-import login3 from "@/assets/images/login-3.png";
-import login5 from "@/assets/images/login-5.png";
-import login10 from "@/assets/images/login-10.png";
-import login8 from "@/assets/images/login-8.png";
-import login11 from "@/assets/images/login-11.png";
-import login7 from "@/assets/images/login-7.png";
+import curveLine from "@/assets/images/curve-line.webp";
+import login4 from "@/assets/images/login-4.webp";
+import graphic3 from "@/assets/images/graphic-3.webp";
+import graphic4 from "@/assets/images/graphic-4.webp";
+import graphic5 from "@/assets/images/graphic-5.webp";
+import login1 from "@/assets/images/login-1.webp";
+import login3 from "@/assets/images/login-3.webp";
+import login5 from "@/assets/images/login-5.webp";
+import login10 from "@/assets/images/login-10.webp";
+import login8 from "@/assets/images/login-8.webp";
+import login11 from "@/assets/images/login-11.webp";
+import login7 from "@/assets/images/login-7.webp";
 
 const Story = () => {
   return (

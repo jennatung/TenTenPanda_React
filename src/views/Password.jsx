@@ -1,8 +1,8 @@
-import graphic1 from "@/assets/images/graphic-1.png";
-import graphic2 from "@/assets/images/graphic-2.png";
-import graphic3 from "@/assets/images/graphic-3.svg";
-import graphic4 from "@/assets/images/graphic-4.svg";
-import graphic5 from "@/assets/images/graphic-5.svg";
+import graphic1 from "@/assets/images/graphic-1.webp";
+import graphic2 from "@/assets/images/graphic-2.webp";
+import graphic3 from "@/assets/images/graphic-3.webp";
+import graphic4 from "@/assets/images/graphic-4.webp";
+import graphic5 from "@/assets/images/graphic-5.webp";
 
 const Password = () => {
   return (
