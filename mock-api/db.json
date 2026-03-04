@@ -1,22 +1,4 @@
 {
-  "users": [
-    {
-      "id": "4642",
-      "name": "王小明",
-      "email": "test@gmail.com",
-      "password": "abc12345",
-      "phone": "0912345678",
-      "address": "台北市大安區忠孝東路四段123號"
-    },
-    {
-      "id": "4877",
-      "name": "大俠愛吃漢堡包",
-      "email": "example@email.com",
-      "password": "Aa12345678",
-      "phone": "0912345678",
-      "address": "高雄市三民區九如一路 87 號"
-    }
-  ],
-  "orders": [],
-  "$schema": "./node_modules/json-server/schema.json"
+  "users": [],
+  "orders": []
 }
