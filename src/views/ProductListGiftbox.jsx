@@ -1,11 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import home from "@/assets/images/home.webp";
+import 經典甜甜 from "@/assets/images/經典甜甜.webp";
 import 經典甜甜禮盒6入去背 from "@/assets/images/經典甜甜-禮盒-6入-去背.webp";
 import 綜合甜甜禮盒6入去背 from "@/assets/images/綜合甜甜-禮盒-6入-去背.webp";
 import 經典甜甜禮盒12入去背 from "@/assets/images/經典甜甜-禮盒-12入-去背.webp";
 import 綜合甜甜禮盒12入去背 from "@/assets/images/綜合甜甜-禮盒-12入-去背.webp";
+import { useEffect } from "react";
 
 const ProductListGiftbox = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+          window.scrollTo(0, 0);
+        }, []); // 進入元件時執行一次
   return (
     <>
       <section className="p-lg-0 mt-8 mt-lg-14 container mx-lg-auto mb-lg-16">
@@ -71,15 +77,18 @@ const ProductListGiftbox = () => {
               <div className="row">
                 <div className="col-12 col-lg-6 ps-lg-8 pe-lg-0 mb-8">
                   <div className="mb-lg-8 product" data-id="giftbox_Six">
-                    <a
-                      href="./item_details-giftbox_six.html"
-                      className="position-relative d-inline-block"
-                    >
                       <div className="img-box p-25">
                         <img
                           src={經典甜甜禮盒6入去背}
                           alt="經典甜甜-禮盒-6入"
                           className="img-fluid"
+                          onClick={() => navigate("/itemDetails-GiftboxSix")}
+                          onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            navigate("itemDetails-GiftboxSix");
+                          }
+                        }}
+                        style={{ cursor: "pointer" }}
                         />
                       </div>
                       {/* 加入收藏 */}
@@ -96,7 +105,6 @@ const ProductListGiftbox = () => {
                         <i className="bi bi-heart empty"></i>
                         <i className="bi bi-heart-fill full"></i>
                       </button>
-                    </a>
                     <div className="d-flex justify-content-between align-items-center">
                       <div>
                         <h2 className="fs-6 mb-2">經典甜甜-禮盒-6入</h2>
@@ -116,15 +124,18 @@ const ProductListGiftbox = () => {
                 </div>
                 <div className="col-12 col-lg-6 ps-lg-8 pe-lg-0 mb-8">
                   <div className="mb-lg-8 product" data-id="comp_giftbox_Six">
-                    <a
-                      href="./item_details-comp_giftbox_six.html"
-                      className="position-relative d-inline-block"
-                    >
                       <div className="img-box p-25">
                         <img
                           src={綜合甜甜禮盒6入去背}
                           alt="綜合甜甜-禮盒-6入"
                           className="img-fluid"
+                          onClick={() => navigate("/itemDetails-CompGiftboxSix")}
+                          onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            navigate("itemDetails-CompGiftboxSix");
+                          }
+                          }}
+                          style={{ cursor: "pointer" }}
                         />
                       </div>
                       {/* 加入收藏 */}
@@ -141,7 +152,6 @@ const ProductListGiftbox = () => {
                         <i className="bi bi-heart empty"></i>
                         <i className="bi bi-heart-fill full"></i>
                       </button>
-                    </a>
                     <div className="d-flex justify-content-between align-items-center">
                       <div>
                         <h2 className="fs-6 mb-2">綜合甜甜-禮盒-6入</h2>
@@ -161,15 +171,18 @@ const ProductListGiftbox = () => {
                 </div>
                 <div className="col-12 col-lg-6 ps-lg-8 pe-lg-0 mb-8">
                   <div className="mb-lg-8 product" data-id="giftbox_twelve">
-                    <a
-                      href="./item_details-giftbox_twelve.html"
-                      className="position-relative d-inline-block"
-                    >
                       <div className="img-box p-25">
                         <img
                           src={經典甜甜禮盒12入去背}
                           alt="經典甜甜-禮盒-12入"
                           className="img-fluid"
+                          onClick={() => navigate("/itemDetails-GiftboxTwelve")}
+                          onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            navigate("itemDetails-GiftboxTwelve");
+                          }
+                          }}
+                          style={{ cursor: "pointer" }}
                         />
                       </div>
                       {/* 加入收藏 */}
@@ -186,7 +199,6 @@ const ProductListGiftbox = () => {
                         <i className="bi bi-heart empty"></i>
                         <i className="bi bi-heart-fill full"></i>
                       </button>
-                    </a>
                     <div className="d-flex justify-content-between align-items-center">
                       <div>
                         <h2 className="fs-6 mb-2">經典甜甜-禮盒-12入</h2>
@@ -209,15 +221,18 @@ const ProductListGiftbox = () => {
                     className="mb-lg-8 product"
                     data-id="Comp_giftbox_twelve"
                   >
-                    <a
-                      href="./item_details-comp_giftbox_twelve.html"
-                      className="position-relative d-inline-block"
-                    >
                       <div className="img-box p-25">
                         <img
                           src={綜合甜甜禮盒12入去背}
                           alt="綜合甜甜-禮盒-12入"
                           className="img-fluid"
+                          onClick={() => navigate("/itemDetails-CompGiftboxTwelve")}
+                          onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            navigate("itemDetails-CompGiftboxTwelve");
+                          }
+                          }}
+                          style={{ cursor: "pointer" }}
                         />
                       </div>
                       {/* 加入收藏 */}
@@ -234,7 +249,6 @@ const ProductListGiftbox = () => {
                         <i className="bi bi-heart empty"></i>
                         <i className="bi bi-heart-fill full"></i>
                       </button>
-                    </a>
                     <div className="d-flex justify-content-between align-items-center">
                       <div>
                         <h2 className="fs-6 mb-2">綜合甜甜-禮盒-12入</h2>

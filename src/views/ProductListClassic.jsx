@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import home from "@/assets/images/home.webp";
 import 經典甜甜 from "@/assets/images/經典甜甜.webp";
 import 芝麻甜甜 from "@/assets/images/芝麻甜甜.webp";
@@ -6,13 +6,13 @@ import 抹茶甜甜 from "@/assets/images/抹茶甜甜.webp";
 import 生乳檸檬甜甜 from "@/assets/images/生乳檸檬甜甜.webp";
 import 焦糖可可甜甜 from "@/assets/images/焦糖可可甜甜.webp";
 import 莓果甜甜 from "@/assets/images/莓果甜甜.webp";
+import { useEffect } from "react";
 
 const ProductListClassic = () => {
-
-  const handleView = (id) => {
-    navigate(`/product/${id}`);
-  };
-
+  const navigate = useNavigate();
+  useEffect(() => {
+          window.scrollTo(0, 0);
+        }, []); // 進入元件時執行一次
   return (
     <>
       <section className="p-lg-0 mt-8 mt-lg-14 container mx-lg-auto mb-lg-16">
@@ -78,15 +78,18 @@ const ProductListClassic = () => {
               <div className="row">
                 <div className="col-12 col-lg-6 ps-lg-8 pe-lg-0 mb-8">
                   <div className="mb-lg-8 product" data-id="classic">
-                    <a
-                      href="./item_details-classic.html"
-                      className="position-relative d-inline-block"
-                    >
                       <div className="img-box">
                         <img
                           src={經典甜甜}
                           alt="經典甜甜"
                           className="img-fluid"
+                          onClick={() => navigate("/itemDetails-Classic")}
+                          onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            navigate("itemDetails-Classic");
+                          }
+                        }}
+                        style={{ cursor: "pointer" }}
                         />
                       </div>
                       {/* 加入收藏 */}
@@ -103,7 +106,6 @@ const ProductListClassic = () => {
                         <i className="bi bi-heart empty"></i>
                         <i className="bi bi-heart-fill full"></i>
                       </button>
-                    </a>
                     <div className="d-flex justify-content-between align-items-center">
                       <div>
                         <h2 className="fs-6 mb-2">經典甜甜</h2>
@@ -123,15 +125,18 @@ const ProductListClassic = () => {
                 </div>
                 <div className="col-12 col-lg-6 ps-lg-8 pe-lg-0 mb-8">
                   <div className="mb-lg-8 product" data-id="berry">
-                    <a
-                      href="./item_details-berry.html"
-                      className="position-relative d-inline-block"
-                    >
                       <div className="img-box">
                         <img
                           src={莓果甜甜}
                           alt="莓果甜甜"
                           className="img-fluid"
+                          onClick={() => navigate("/itemDetails-Berry")}
+                          onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            navigate("itemDetails-Berry");
+                          }
+                        }}
+                        style={{ cursor: "pointer" }}
                         />
                       </div>
                       {/* 加入收藏 */}
@@ -144,7 +149,6 @@ const ProductListClassic = () => {
                         <i className="bi bi-heart empty"></i>
                         <i className="bi bi-heart-fill full"></i>
                       </button>
-                    </a>
                     <div className="d-flex justify-content-between align-items-center">
                       <div>
                         <h2 className="fs-6 mb-2">莓果甜甜</h2>
@@ -164,8 +168,8 @@ const ProductListClassic = () => {
                 </div>
                 <div className="col-12 col-lg-6 ps-lg-8 pe-lg-0 mb-8">
                   <div className="mb-lg-8 product" data-id="sesame">
-                    <a
-                      href="./item_details-sesame.html"
+                    <Link
+                      to="/itemDetails-Sesame"
                       className="position-relative d-inline-block"
                     >
                       <div className="img-box">
@@ -185,7 +189,7 @@ const ProductListClassic = () => {
                         <i className="bi bi-heart empty"></i>
                         <i className="bi bi-heart-fill full"></i>
                       </button>
-                    </a>
+                    </Link>
                     <div className="d-flex justify-content-between align-items-center">
                       <div>
                         <h2 className="fs-6 mb-2">芝麻甜甜</h2>
@@ -205,15 +209,18 @@ const ProductListClassic = () => {
                 </div>
                 <div className="col-12 col-lg-6 ps-lg-8 pe-lg-0 mb-8">
                   <div className="mb-lg-8 product" data-id="matcha">
-                    <a
-                      href="./item_details-matcha.html"
-                      className="position-relative d-inline-block"
-                    >
                       <div className="img-box">
                         <img
                           src={抹茶甜甜}
                           alt="抹茶甜甜"
                           className="img-fluid"
+                          onClick={() => navigate("/itemDetails-Matcha")}
+                          onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            navigate("itemDetails-Matcha");
+                          }
+                        }}
+                        style={{ cursor: "pointer" }}
                         />
                       </div>
                       {/* 加入收藏 */}
@@ -226,7 +233,6 @@ const ProductListClassic = () => {
                         <i className="bi bi-heart empty"></i>
                         <i className="bi bi-heart-fill full"></i>
                       </button>
-                    </a>
                     <div className="d-flex justify-content-between align-items-center">
                       <div>
                         <h2 className="fs-6 mb-2">抹茶甜甜</h2>
@@ -246,15 +252,18 @@ const ProductListClassic = () => {
                 </div>
                 <div className="col-12 col-lg-6 ps-lg-8 pe-lg-0 mb-8">
                   <div className="mb-lg-8 product" data-id="creamlemon">
-                    <a
-                      href="./item_details-creamlemon.html"
-                      className="position-relative d-inline-block"
-                    >
                       <div className="img-box">
                         <img
                           src={生乳檸檬甜甜}
                           alt="生乳檸檬甜甜"
                           className="img-fluid"
+                          onClick={() => navigate("/itemDetails-CreamLemon")}
+                          onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            navigate("itemDetails-CreamLemon");
+                          }
+                        }}
+                        style={{ cursor: "pointer" }}
                         />
                       </div>
                       {/* 加入收藏 */}
@@ -267,7 +276,6 @@ const ProductListClassic = () => {
                         <i className="bi bi-heart empty"></i>
                         <i className="bi bi-heart-fill full"></i>
                       </button>
-                    </a>
                     <div className="d-flex justify-content-between align-items-center">
                       <div>
                         <h2 className="fs-6 mb-2">生乳檸檬甜甜</h2>
@@ -287,15 +295,18 @@ const ProductListClassic = () => {
                 </div>
                 <div className="col-12 col-lg-6 ps-lg-8 pe-lg-0 mb-8">
                   <div className="mb-lg-8 product" data-id="caramelcocoa">
-                    <a
-                      href="./item_details-caramelcocoa.html"
-                      className="position-relative d-inline-block"
-                    >
                       <div className="img-box">
                         <img
                           src={焦糖可可甜甜}
                           alt="焦糖可可甜甜"
                           className="img-fluid"
+                          onClick={() => navigate("/itemDetails-CaramelCocoa")}
+                          onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            navigate("itemDetails-CaramelCocoa");
+                          }
+                        }}
+                        style={{ cursor: "pointer" }}
                         />
                       </div>
                       {/* 加入收藏 */}
@@ -308,7 +319,6 @@ const ProductListClassic = () => {
                         <i className="bi bi-heart empty"></i>
                         <i className="bi bi-heart-fill full"></i>
                       </button>
-                    </a>
                     <div className="d-flex justify-content-between align-items-center">
                       <div>
                         <h2 className="fs-6 mb-2">焦糖可可甜甜</h2>

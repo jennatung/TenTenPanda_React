@@ -14,7 +14,7 @@ import starberryImage from "@/assets/images/星塵草莓2-光暈.webp";
 import snowberryImage from "@/assets/images/白雪綿霜莓2-光暈.webp";
 import berryCocoImage from "@/assets/images/莓果可可2-光暈.webp";
 import wineberryImage from "@/assets/images/熱紅酒莓果2-光暈.webp";
-import snowberryMontImage from "@/assets/images/雪莓蒙布郎2-光暈.webp";
+import snowberryMontImage from "@/assets/images/雪莓蒙布朗2-光暈.webp";
 import frostberryImage from "@/assets/images/莓果夾心2-光暈.webp";
 import classicImage from "@/assets/images/經典甜甜.webp";
 import berryImage from "@/assets/images/莓果甜甜.webp";
