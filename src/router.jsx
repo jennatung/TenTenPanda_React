@@ -7,6 +7,7 @@ import Join from "./views/Join";
 import Password from "./views/Password";
 import Return from "./views/Return";
 import Privacy from "./views/Privacy";
+import News from "./views/News";
 import ProductListClassic from "./views/ProductListClassic";
 import ProductListGiftbox from "./views/ProductListGiftbox";
 import ProductListSeasonal from "./views/ProductListSeasonal";
@@ -60,8 +61,38 @@ const router = createHashRouter([
         element: <Privacy />,
       },
       {
+        path: "news",
+        element: <News />,
+      },
+      {
         path: "productList-classic",
         element: <ProductListClassic />,
+        children: [
+          {
+            path: "itemDetails-Classic",
+            element: <ItemDetailsClassic />,
+          },
+          {
+            path: "itemDetails-CreamLemon",
+            element: <ItemDetailsCreamLemon />,
+          },
+          {
+            path: "itemDetails-Sesame",
+            element: <ItemDetailsBerry />,
+          },
+          {
+            path: "itemDetails-Matcha",
+            element: <ItemDetailsMatcha />,
+          },
+          {
+            path: "itemDetails-Caramelcocoa",
+            element: <ItemDetailsCaramelcocoa />,
+          },
+          {
+            path: "itemDetails-Berry",
+            element: <ItemDetailsBerry />,
+          },
+        ],
       },
       {
         path: "itemDetails-Classic",
@@ -90,6 +121,24 @@ const router = createHashRouter([
       {
         path: "productList-giftbox",
         element: <ProductListGiftbox />,
+        children: [
+          {
+            path: "itemDetails-GiftboxSix",
+            element: <ItemDetailsGiftboxSix />,
+          },
+          {
+            path: "itemDetails-GiftboxTwelve",
+            element: <ItemDetailsGiftboxTwelve />,
+          },
+          {
+            path: "itemDetails-CompGiftboxSix",
+            element: <ItemDetailsCompGiftboxSix />,
+          },
+          {
+            path: "itemDetails-CompGiftboxTwelve",
+            element: <ItemDetailsCompGiftboxTwelve />,
+          },
+        ],
       },
       {
         path: "itemDetails-GiftboxSix",
