@@ -30,6 +30,9 @@ import ItemDetailsSnowberryMont from "./views/ItemDetailsSnowberryMont";
 import ItemDetailsWineberry from "./views/ItemDetailsWineberry";
 import ItemDetailsStarberry from "./views/ItemDetailsStarberry";
 import ProtectedRoute from "./components/ProtectedRoute";
+import SingleProductClassic from "./views/SingleProductClassic";
+import SingleProductSeasonal from "./views/SingleProductSeasonal";
+import SingleProductGiftbox from "./views/SingleProductGiftbox";
 
 const router = createHashRouter([
   {
@@ -95,83 +98,28 @@ const router = createHashRouter([
       {
         path: "productList-classic",
         element: <ProductListClassic />,
-        children: [
-          {
-            path: "itemDetails-Classic",
-            element: <ItemDetailsClassic />,
-          },
-          {
-            path: "itemDetails-CreamLemon",
-            element: <ItemDetailsCreamLemon />,
-          },
-          {
-            path: "itemDetails-Sesame",
-            element: <ItemDetailsBerry />,
-          },
-          {
-            path: "itemDetails-Matcha",
-            element: <ItemDetailsMatcha />,
-          },
-          {
-            path: "itemDetails-Caramelcocoa",
-            element: <ItemDetailsCaramelcocoa />,
-          },
-          {
-            path: "itemDetails-Berry",
-            element: <ItemDetailsBerry />,
-          },
-        ],
       },
+      {
+        path: "productList-classic/:id",
+        element: <SingleProductClassic />,
+      },
+
       {
         path: "productList-giftbox",
         element: <ProductListGiftbox />,
-        children: [
-          {
-            path: "itemDetails-GiftboxSix",
-            element: <ItemDetailsGiftboxSix />,
-          },
-          {
-            path: "itemDetails-GiftboxTwelve",
-            element: <ItemDetailsGiftboxTwelve />,
-          },
-          {
-            path: "itemDetails-CompGiftboxSix",
-            element: <ItemDetailsCompGiftboxSix />,
-          },
-          {
-            path: "itemDetails-CompGiftboxTwelve",
-            element: <ItemDetailsCompGiftboxTwelve />,
-          },
-        ],
       },
+      {
+        path: "productList-giftbox/:id",
+        element: <SingleProductGiftbox />,
+      },
+
       {
         path: "productList-seasonal",
         element: <ProductListSeasonal />,
       },
       {
-        path: "itemDetails-Frostberry",
-        element: <ItemDetailsFrostberry />,
-      },
-
-      {
-        path: "itemDetails-Starberry",
-        element: <ItemDetailsStarberry />,
-      },
-      {
-        path: "itemDetails-Berrycoco",
-        element: <ItemDetailsBerrycoco />,
-      },
-      {
-        path: "itemDetails-Snowberry",
-        element: <ItemDetailsSnowberry />,
-      },
-      {
-        path: "itemDetails-SnowberryMont",
-        element: <ItemDetailsSnowberryMont />,
-      },
-      {
-        path: "itemDetails-Wineberry",
-        element: <ItemDetailsWineberry />,
+        path: "productList-seasonal/:id",
+        element: <SingleProductSeasonal />,
       },
     ],
   },
