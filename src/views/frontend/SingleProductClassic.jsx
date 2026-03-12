@@ -1,6 +1,6 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { supabase } from "../../supabaseClient";
+import { supabase } from "../../../supabaseClient";
 import { updateCart } from "@/api/cart";
 import { Modal } from "bootstrap";
 import { getFavorite, toggleFavorite } from "@/api/favorite";
@@ -11,9 +11,8 @@ import 芝麻甜甜 from "@/assets/images/芝麻甜甜.webp";
 import 抹茶甜甜 from "@/assets/images/抹茶甜甜.webp";
 import 焦糖可可甜甜 from "@/assets/images/焦糖可可甜甜.webp";
 
-const SingleProductSeasonal = () => {
+const SingleProductClassic = () => {
   const navigate = useNavigate();
-  const [showCartSuccess, setShowCartSuccess] = useState(false);
 
   // 從網址取得 id
   const { id } = useParams();
@@ -32,13 +31,11 @@ const SingleProductSeasonal = () => {
 
   const [isFavorite, setIsFavorite] = useState(false);
 
-
   /**
    * 依 id 取得單筆商品資料
    * 主圖使用 image_content_url
    */
   const getProductDetail = async () => {
-    console.log("step1");
     try {
       setLoading(true);
       setErrorMessage("");
@@ -101,10 +98,9 @@ const SingleProductSeasonal = () => {
     }
   };
 
-
   /**
-* 檢查目前商品是否已收藏
-*/
+   * 檢查目前商品是否已收藏
+   */
   const checkIsFavorite = async (productId) => {
     const favoriteList = await getFavorite();
     const exists = favoriteList.some((item) => item.product_id === productId);
@@ -185,10 +181,10 @@ const SingleProductSeasonal = () => {
                 </span>
               </li>
 
-              {/* 桌機版：季節限定 */}
+              {/* 桌機版：經典口味 */}
               <li className="bread-item d-none d-lg-block">
-                <Link to="/productList-seasonal" className="text-neutral-60">
-                  季節限定
+                <Link to="/productList-classic" className="text-neutral-60">
+                  經典口味
                 </Link>
               </li>
 
@@ -505,7 +501,7 @@ const SingleProductSeasonal = () => {
           </div>
         </div>
       </div>
-      {/* 取消收藏 modal */}   
+      {/* 取消收藏 modal */}
       <div
         className="modal fade"
         tabIndex="-1"
@@ -530,4 +526,4 @@ const SingleProductSeasonal = () => {
   );
 };
 
-export default SingleProductSeasonal;
+export default SingleProductClassic;

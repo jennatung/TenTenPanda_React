@@ -1,6 +1,6 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { supabase } from "../../supabaseClient";
+import { supabase } from "../../../supabaseClient";
 import { updateCart } from "@/api/cart";
 import { Modal } from "bootstrap";
 import { getFavorite, toggleFavorite } from "@/api/favorite";
@@ -11,7 +11,7 @@ import 芝麻甜甜 from "@/assets/images/芝麻甜甜.webp";
 import 抹茶甜甜 from "@/assets/images/抹茶甜甜.webp";
 import 焦糖可可甜甜 from "@/assets/images/焦糖可可甜甜.webp";
 
-const SingleProductGiftbox = () => {
+const SingleProductSeasonal = () => {
   const navigate = useNavigate();
   const [showCartSuccess, setShowCartSuccess] = useState(false);
 
@@ -31,7 +31,6 @@ const SingleProductGiftbox = () => {
   const [quantity, setQuantity] = useState(1);
 
   const [isFavorite, setIsFavorite] = useState(false);
-
 
   /**
    * 依 id 取得單筆商品資料
@@ -101,10 +100,9 @@ const SingleProductGiftbox = () => {
     }
   };
 
-
   /**
-* 檢查目前商品是否已收藏
-*/
+   * 檢查目前商品是否已收藏
+   */
   const checkIsFavorite = async (productId) => {
     const favoriteList = await getFavorite();
     const exists = favoriteList.some((item) => item.product_id === productId);
@@ -185,10 +183,10 @@ const SingleProductGiftbox = () => {
                 </span>
               </li>
 
-              {/* 桌機版：甜甜禮盒 */}
+              {/* 桌機版：季節限定 */}
               <li className="bread-item d-none d-lg-block">
-                <Link to="/productList-giftbox" className="text-neutral-60">
-                  甜甜禮盒
+                <Link to="/productList-seasonal" className="text-neutral-60">
+                  季節限定
                 </Link>
               </li>
 
@@ -530,4 +528,4 @@ const SingleProductGiftbox = () => {
   );
 };
 
-export default SingleProductGiftbox;
+export default SingleProductSeasonal;
