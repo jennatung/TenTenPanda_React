@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 const CouponContext = createContext();
 
 export function CouponProvider({ children }) {
-  const [couponCode, setCouponCode] = useState(""); 
+  const [couponCode, setCouponCode] = useState(null); 
   const [couponDiscount, setCouponDiscount] = useState(0); 
 
   return (

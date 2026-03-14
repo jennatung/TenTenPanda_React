@@ -15,18 +15,17 @@ const OrderSuccess = () => {
       } = await supabase.auth.getUser();
       if (!user) return;
       const res = await supabase
-        .from("carts")
-        .select(`*, profiles(*), products(*)`)
+        .from("orders")
+        .select(`id`)
         .eq("user_id", user.id)
         .throwOnError();
-      setOrderID(res.data[0].id.slice(-6));
+      setOrderID(res.data.at(-1).id.slice(-6));
       // 刪除購物車資料
-      const cartIds = res.data.map(item => item.id);
-      await supabase
-        .from('carts')
-        .delete()
-        .in('id', cartIds)
-        .throwOnError();
+      const response = await supabase
+          .from('carts')
+          .delete()
+          .eq('user_id', user.id)
+          .throwOnError();
     } catch (error) {
       alert("資料錯誤");
     }
