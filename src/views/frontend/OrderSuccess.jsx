@@ -21,6 +21,11 @@ const OrderSuccess = () => {
         .eq("user_id", user.id)
         .throwOnError();
       setOrderID(res.data[0].id.slice(-6));
+      await supabase
+        .from('carts')
+        .delete()
+        .eq('user_id', user.id) 
+        .throwOnError(); 
     } catch (error) {
       alert("資料錯誤");
     }
