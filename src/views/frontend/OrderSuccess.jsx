@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { supabase } from "../../../supabaseClient.js";
 import orderSuccessImg from "@/assets/images/order-success/order-success-img.png";
 import orderSuccessDone from "@/assets/images/order-success/order-success-done.png";
-import { set } from "react-hook-form";
 
 const OrderSuccess = () => {
   const [orderID, setOrderID] = useState([]);
@@ -21,11 +20,13 @@ const OrderSuccess = () => {
         .eq("user_id", user.id)
         .throwOnError();
       setOrderID(res.data[0].id.slice(-6));
+      // 刪除購物車資料
+      const cartIds = res.data.map(item => item.id);
       await supabase
         .from('carts')
         .delete()
-        .eq('user_id', user.id) 
-        .throwOnError(); 
+        .in('id', cartIds)
+        .throwOnError();
     } catch (error) {
       alert("資料錯誤");
     }
