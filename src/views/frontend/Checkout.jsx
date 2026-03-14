@@ -9,6 +9,7 @@ const Checkout = () => {
   const [cart, setCart] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const { couponCode, setCouponCode, couponDiscount } = useCoupon();
+  const shippingFee = 60;
 
   useEffect(() => {
     (async () => {
@@ -63,7 +64,6 @@ const Checkout = () => {
             price: item.products.price, // 存下購買時的價格！
             qty: item.qty
         }));
-    const shippingFee = 60;
     const { data: { user } } = await supabase.auth.getUser(); 
     console.log(couponCode);
     console.log(typeof couponCode);
@@ -80,7 +80,7 @@ const Checkout = () => {
                 shipping_fee: shippingFee, // 帶入參數
                 sub_total: totalPrice, // 帶入變數
                 discount_amount: couponDiscount, // 帶入變數
-                total_amount: totalPrice + shippingFee, // 帶入變數
+                total_amount: totalPrice + shippingFee - couponDiscount, // 帶入變數
                 coupon_id: couponCode, // 帶入變數
                 receiver_name: data.receiverName, // 帶入變數
                 receiver_email: data.receiverEmail, // 帶入變數
@@ -448,7 +448,7 @@ const Checkout = () => {
                       </div>
                       <div className="d-flex justify-content-between fs-6 text-neutral-100">
                         <p>運費</p>
-                        <p>NT$ 65</p>
+                        <p>NT$ {shippingFee}</p>
                       </div>
                       <div className="d-flex justify-content-between fs-6 text-neutral-100">
                         <p>優惠折扣</p>
@@ -460,7 +460,7 @@ const Checkout = () => {
                         總計
                       </h3>
                       <p className="fs-5 text-primary-80 fw-bold">
-                        NT$ {totalPrice + 65 - 100}
+                        NT$ {totalPrice + shippingFee - couponDiscount}
                       </p>
                     </div>
                   </div>
